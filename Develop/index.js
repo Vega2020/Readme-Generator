@@ -61,11 +61,27 @@ inquirer
             message: "What's your github account handle?"
         }
     ])
-    .then(function (user) {
-        console.log(user);
+    .then(function (userData) {
+        console.log(userData);
+        //localStorage.setItem("userData", JSON.stringify(userData));
+
+        const template = `
+        # *${userData.projectTitle}*
+        ## By: ${userData.contributors}
+        `;
+
+        writeToFile(userData.projectTitle, template);
     })
 
+    //this breaks the code. why?
+//console.log(localStorage.getItem("userData"));
+
+    //we're defining a function here so we don't need to worry about how these variables are named, we'll call in our locally stored userData variable later
 function writeToFile(fileName, data) {
+    fs.writeFile(`${fileName}.md`, data, function (err) {
+        if (err) throw err;
+        console.log('saved!');
+    });
 }
 
 function init() {
