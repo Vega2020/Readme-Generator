@@ -23,7 +23,7 @@ inquirer
         {
             name: "tableOfContents",
             type: "input",
-            message:
+            message: "List your table of contents"
         }
     ])
 
