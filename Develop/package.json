@@ -1,15 +1,27 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Jeremy Flowers",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.0.0",
     "inquirer": "^6.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vega2020/Readme-Generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/Vega2020/Readme-Generator/issues"
+  },
+  "homepage": "https://github.com/Vega2020/Readme-Generator#readme",
+  "description": ""
 }
