@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const axios = require("axios");
 
 const writeFile = util.promisify(fs.writeFile);
 
@@ -21,11 +22,6 @@ inquirer
             name: "projectDescription",
             type: "input",
             message: "Describe the thing:"
-        },
-        {
-            name: "tableOfContents",
-            type: "input",
-            message: "List your table of contents"
         },
         {
             name: "installation",
@@ -61,44 +57,49 @@ inquirer
             name: "userGithub",
             type: "input",
             message: "What's your github account handle?"
-        }
+        },
     ])
     .then(function (userData) {
         console.log(userData);
-        //localStorage.setItem("userData", JSON.stringify(userData));
-
+        
+        //the code below is for getting info from github but seems to be breaking everything
+        //console.log(userData.userGithub);
+        //return axios.get(`https://api.github.com/users/${userData.userGithub}`);
+        
+        //make template a separate file instead? - already copied over all this information
         const template = `
         # *${userData.projectTitle}*
         ## By: ${userData.contributors}
-
-        Table of Contents:
         
-
+        Table of Contents:
+        [Project Description](Project Description)
+        
+        
         ## Project Description: ${userData.projectDescription}
-
+        
         ## Installation: ${userData.installation}
-
+        
         ## Usage: ${userData.usage}
-
+        
         ## Licenses: ${userData.license}
-
+        
         ## Tests: ${userData.tests}
-
+        
         ## Questions: ${userData.questions}
-
+        
         `;
-
-        writeToFile(userData.projectTitle, template);
+        
+        writeToFile("readme.md", template);
     })
-
+    
     //this breaks the code. why?
-//console.log(localStorage.getItem("userData"));
-
+    //console.log(localStorage.getItem("userData"));
+    
     //we're defining a function here so we don't need to worry about how these variables are named, we'll call in our locally stored userData variable later
-function writeToFile(fileName, data) {
-    fs.writeFile(`${fileName}.md`, data, function (err) {
-        if (err) throw err;
-        console.log('saved!');
+    function writeToFile(fileName, data) {
+        fs.writeFile(`${fileName}.md`, data, function (err) {
+            if (err) throw err;
+            console.log('saved!');
     });
 }
 
@@ -107,3 +108,11 @@ function init() {
 }
 
 init();
+
+
+//REMAINING STEPS:
+//Badges
+//Get table of contents working
+//Github API
+// Get md format to display properly (good but not necessary)
+// work from external template (not necessary so abandon it)
