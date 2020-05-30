@@ -3,8 +3,11 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const axios = require("axios");
+const shields = require("shields");
 
 const writeFile = util.promisify(fs.writeFile);
+
+var badgeURL = `https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>`
 
 // copied from class example
 // const questions = [
@@ -16,37 +19,38 @@ inquirer
         {
             name: "projectTitle",
             type: "input",
-            message: "What is the thing called?"
+            message: "Enter the title of the project:"
         },
         {
             name: "projectDescription",
             type: "input",
-            message: "Describe the thing:"
+            message: "Give an overview of the project:"
         },
         {
             name: "installation",
             type: "input",
-            message: "How do you install the thing?"
+            message: "Enter installation instructions:"
+            //could expand this into a loop that asks if you have another instruction and appends each instruction into a numbered list
         },
         {
             name: "usage",
             type: "input",
-            message: "How do you use the thing?"
+            message: "Steps to use the program:"
         },
         {
             name: "license",
             type: "input",
-            message: "What license is the thing under?"
+            message: "Enter license:"
         },
         {
             name: "contributors",
             type: "input",
-            message: "Who made the thing?"
+            message: "Contributor names:"
         },
         {
             name: "tests",
             type: "input",
-            message: "How do you test the thing?"
+            message: "Tests performed:"
         },
         {
             name: "questions",
@@ -67,30 +71,35 @@ inquirer
         //return axios.get(`https://api.github.com/users/${userData.userGithub}`);
         
         //make template a separate file instead? - already copied over all this information
-        const template = `
-        # *${userData.projectTitle}*
-        ## By: ${userData.contributors}
+    const template = `
+# *${userData.projectTitle}*
+## By: ${userData.contributors}
         
-        Table of Contents:
-        [Project Description](Project Description)
+Table of Contents:
+[Project Description](Project Description)
+[Installation](Installation)
+[Usage](Usage)
+[Licenses](Licenses)
+[Tests](Tests)
+[Questions](Questions)
         
         
-        ## Project Description: ${userData.projectDescription}
+## Project Description: ${userData.projectDescription}
         
-        ## Installation: ${userData.installation}
+## Installation: ${userData.installation}
         
-        ## Usage: ${userData.usage}
+## Usage: ${userData.usage}
         
-        ## Licenses: ${userData.license}
+## Licenses: ${userData.license}
         
-        ## Tests: ${userData.tests}
+## Tests: ${userData.tests}
         
-        ## Questions: ${userData.questions}
+## Questions: ${userData.questions}
         
-        `;
+`;
         
-        writeToFile("readme.md", template);
-    })
+    writeToFile("readme", template);
+})
     
     //this breaks the code. why?
     //console.log(localStorage.getItem("userData"));
@@ -114,5 +123,6 @@ init();
 //Badges
 //Get table of contents working
 //Github API
+// do the screenshots
 // Get md format to display properly (good but not necessary)
 // work from external template (not necessary so abandon it)
