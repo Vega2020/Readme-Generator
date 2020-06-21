@@ -1,25 +1,16 @@
 
-# *Homework 9*
+# *Day Planner*
 ## By: Jeremy Flowers
         
 Table of Contents:
 [Project Description](Project Description)
 [Installation](Installation)
 [Usage](Usage)
-[Licenses](Licenses)
-[Tests](Tests)
-[Questions](Questions)
         
         
-## Project Description: Create a readme generator
+## Project Description: This is a single-page scheduling app that allows the user to save events by writing and retrieving them from local storage with Javascript.
         
-## Installation: The program works from the command line interface. Node.js is required. Use NPM install to install the dependencies.
+## Installation: The app is meant to be accessed online through a web browser using this repo. No installation is required.
         
-## Usage: Open index.js, then run "node index.js" and answer the prompts. The program will populate a readme.
-        
-## Licenses: Open
-        
-## Tests: Numerous tests were performed on getting the markdown to display accurately and get the templating to work correctly.
-        
-## Questions: A grade. There are still improvements to make. The shield and github account image are not working.
+## Usage: Navigate to the program's page and then enter information in the text boxes. Each hour has a corresponding text box that can be filled with tasks and a save button that will write the content of the box to local storage. Next time you load the page, your tasks will be there!
         
