@@ -98,7 +98,7 @@ Table of Contents:
         
 `;
         
-    writeToFile("readme", template);
+    writeToFile("output/readme", template);
 })
     
     //this breaks the code. why?
