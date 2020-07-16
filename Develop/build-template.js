@@ -4,7 +4,7 @@
 Table of Contents:
 
 
-## Project Description: ${userData.projectDescription}
+## Overview: ${userData.projectDescription}
 
 ## Installation: ${userData.installation}
 

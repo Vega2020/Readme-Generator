@@ -9,10 +9,6 @@ const writeFile = util.promisify(fs.writeFile);
 
 var badgeURL = `https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>`
 
-// copied from class example
-// const questions = [
-// ];
-
 //this is the inquirer prompt to collect the user's information
 inquirer
     .prompt([
@@ -40,7 +36,7 @@ inquirer
         {
             name: "license",
             type: "input",
-            message: "Enter license:"
+            message: "Enter license information:"
         },
         {
             name: "contributors",
@@ -55,7 +51,7 @@ inquirer
         {
             name: "questions",
             type: "input",
-            message: "What kind of feedback do you need about the thing?"
+            message: "What kind of feedback do you need?"
         },
         {
             name: "userGithub",
@@ -76,7 +72,7 @@ inquirer
 ## By: ${userData.contributors}
         
 Table of Contents:
-[Project Description](Project Description)
+[Overview](Overview)
 [Installation](Installation)
 [Usage](Usage)
 [Licenses](Licenses)
@@ -84,17 +80,22 @@ Table of Contents:
 [Questions](Questions)
         
         
-## Project Description: ${userData.projectDescription}
+## Overview: ${userData.projectDescription}
         
-## Installation: ${userData.installation}
+## Installation:  
+${userData.installation}
         
-## Usage: ${userData.usage}
+## Usage:  
+${userData.usage}
         
-## Licenses: ${userData.license}
+## Licenses:  
+${userData.license}
         
-## Tests: ${userData.tests}
+## Tests:  
+${userData.tests}
         
-## Questions: ${userData.questions}
+## Questions:  
+${userData.questions}
         
 `;
         
@@ -119,10 +120,8 @@ function init() {
 init();
 
 
-//REMAINING STEPS:
+//FUTURE STEPS:
 //Badges
-//Get table of contents working
 //Github API
 // do the screenshots
-// Get md format to display properly (good but not necessary)
-// work from external template (not necessary so abandon it)
+// work from external template
