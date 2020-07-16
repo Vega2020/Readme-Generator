@@ -3,7 +3,7 @@
 ## By: Jeremy Flowers with help from U of A.
         
 Table of Contents:
-[Project Description](Project Description)
+[Project_Description](Project Description)
 [Installation](Installation)
 [Usage](Usage)
 [Licenses](Licenses)
