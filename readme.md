@@ -1,6 +1,7 @@
 
 # *Readme Generator*
-## By: Jeremy Flowers with help from U of A.
+## By: Jeremy Flowers
+with help from U of A.
         
 Table of Contents:
 [Overview](Overview)
