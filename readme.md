@@ -19,6 +19,8 @@ First clone the repository locally in the directory you're going to use it. Open
         
 ## Usage:
 Open a terminal in the readme-generator directory and run server.js in node. The app will begin sending prompts to the command line. After filling out all the information, the readme will be saved as a text file in the output directory.
+
+Repository can be found [here](https://github.com/Vega2020/Readme-Generator)
         
 ## Licenses:
 This app is free to use.
