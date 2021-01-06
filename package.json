@@ -8,7 +8,7 @@
   "author": "Jeremy Flowers",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.0.0",
     "inquirer": "^6.5.2",
     "shields": "^2.1.0"
